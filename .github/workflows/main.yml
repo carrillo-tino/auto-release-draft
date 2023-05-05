@@ -1,0 +1,13 @@
+name: sample-workflow
+on: [push]
+jobs:
+  explore-first-github-worflow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "job was automatically triggerd"
+      - name: check out repository code
+        uses: actions/checkout@v2
+      - name: list files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "this josbs status is ${{ job.status }}
